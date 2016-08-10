@@ -13,6 +13,8 @@ $(document).ready(function() {
 
   $(".panel1 form").submit(function(event) {
     $(".game").text($("input#name").val());
+    $(".panel1").hide();
+    $(".panel2").show();
     event.preventDefault();
   });
 
@@ -27,11 +29,21 @@ $(document).ready(function() {
       playTime *= 1;
     }
 
+    var text = "";
 
-    
+    if (0 <= playTime && playTime <= 30) {
+      text = "You need to play more video games like " + $("input#name").val() + "."
+    } else if (31 <= playTime && playTime <= 90) {
+      text = "You OK. You play " + $("input#name").val() + " an average amount of time for this generation.";
+    } else if (91 <= playTime) {
+      text = "You play " + $("input#name").val() + " way too much. You need a life... or another video game.";
+    }
 
 
-    $(".results").text("You play " + playTime + " hours of month.");
+    $(".results").text("You play " + playTime + " hours of month. " + text );
+
+    $(".panel2").hide();
+    $(".panel3").show();
 
     event.preventDefault();
   });

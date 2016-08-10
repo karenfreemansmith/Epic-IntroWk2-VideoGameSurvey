@@ -9,3 +9,14 @@ h1 {
 h2 {
   font-size: 25px;
 }
+
+
+.panel2, .panel3 {
+  display: none;
+}
+
+.jumbotron {
+  opacity: .95;
+  margin-top: 20%;
+  border-radius: 20px;
+}
